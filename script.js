@@ -1,5 +1,5 @@
 // IMPORTANT: Replace this URL with your deployed Google Apps Script Web App URL
-const FORM_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"; 
+const FORM_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwq1YTJ3GYAszqmTSCrspyDtVYpBBB5l21MYVRZZZm2iY-SeRt8MZAEFh1vt2aMhm7XMg/exec"; 
 
 // === Form Elements ===
 const form = document.getElementById('dataForm');
