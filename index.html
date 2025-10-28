@@ -5,37 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Data Collection Form</title>
-    <!-- Load Tailwind CSS -->
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Leaflet CSS for Map -->
+
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Load Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <div class="container">
         <h1 class="text-2xl font-bold text-center mb-6">Data Collection Form</h1>
 
         <form id="dataForm" method="POST" class="space-y-6">
-
             <!-- ID Number -->
             <div class="space-y-2">
-                <label for="idNumber" class="block text-sm font-medium required-indicator">ID Number (10 or 12 digits, optional V/v)</label>
+                <label for="idNumber" class="block text-sm font-medium required-indicator">
+          ID Number (10 or 12 digits, optional V/v)
+        </label>
                 <input type="text" id="idNumber" name="idNumber" required pattern="^(\d{10}|\d{12})[vV]?$" title="Must be 10 or 12 digits, optionally followed by 'v' or 'V'." class="input-style">
             </div>
 
             <!-- House Number -->
             <div class="space-y-2">
-                <label for="houseNumber" class="block text-sm font-medium required-indicator">House Number/Address</label>
+                <label for="houseNumber" class="block text-sm font-medium required-indicator">
+          House Number
+        </label>
                 <input type="text" id="houseNumber" name="houseNumber" required class="input-style">
             </div>
 
             <!-- Contact Number -->
             <div class="space-y-2">
-                <label for="contactNumber" class="block text-sm font-medium required-indicator">Contact Number (Numbers only)</label>
+                <label for="contactNumber" class="block text-sm font-medium required-indicator">
+          Contact Number (Numbers only)
+        </label>
                 <input type="tel" id="contactNumber" name="contactNumber" required pattern="^\d{10,15}$" title="Must be 10 to 15 digits." class="input-style">
             </div>
 
@@ -45,34 +51,27 @@
                 <button type="button" id="openMapBtn" class="button-primary w-full">Pin Location on Map</button>
                 <div id="locationDisplay" class="text-sm text-gray-700">Location Status: Not Pinned</div>
 
-                <!-- Hidden inputs for data submission -->
-                <input type="hidden" id="latitude" name="latitude" required data-label="Location Latitude">
-                <input type="hidden" id="longitude" name="longitude" required data-label="Location Longitude">
+                <!-- Hidden inputs -->
+                <input type="hidden" id="latitude" name="latitude" required>
+                <input type="hidden" id="longitude" name="longitude" required>
             </div>
 
-            <!-- Family Details Section (Dynamic) -->
+            <!-- Family Details Section -->
             <div id="familyDetailsContainer" class="p-4 border border-gray-300 rounded-lg bg-gray-50">
                 <label class="block text-lg font-bold mb-4 required-indicator">Family Details</label>
 
-                <div id="familyMembersWrapper" class="space-y-3">
-                    <!-- Dynamic member blocks will be inserted here -->
-                </div>
+                <div id="familyMembersWrapper" class="space-y-3"></div>
 
-                <!-- Hidden input to store the final formatted string -->
-                <input type="hidden" id="family_members_data" name="family_members" required data-label="Family Members Data">
-
+                <input type="hidden" id="family_members_data" name="family_members" required>
                 <button type="button" id="addMemberBtn" class="mt-4 button-green w-full">
-                    + Add Another Family Member
-                </button>
+          + Add Another Family Member
+        </button>
             </div>
 
-            <!-- Submit Button and Validation Feedback -->
-            <button type="submit" id="submitBtn" disabled class="button-submit">
-                Submit Data
-            </button>
+            <!-- Submit -->
+            <button type="submit" id="submitBtn" disabled class="button-submit">Submit Data</button>
             <p id="validationMessage" class="text-red-600 mt-2 text-center text-sm font-medium"></p>
             <p id="responseMessage" class="mt-4 text-center text-sm"></p>
-
         </form>
     </div>
 
@@ -88,6 +87,12 @@
             <p id="mapMessage" class="text-sm text-red-500"></p>
         </div>
     </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
