@@ -1,0 +1,14 @@
+body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; padding: 20px; }
+.container { max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+.input-style { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+.button-primary { background-color: #3b82f6; color: white; padding: 10px 15px; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+.button-primary:hover { background-color: #2563eb; }
+.button-green { background-color: #10b981; color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+.button-green:hover { background-color: #059669; }
+.button-red { background-color: #ef4444; color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; transition: background-color 0.2s; }
+.button-red:hover { background-color: #dc2626; }
+.button-submit { width: 100%; padding: 12px; background-color: #1d4ed8; color: white; border-radius: 4px; transition: opacity 0.3s; }
+.button-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.required-indicator::after { content: '*'; color: #ef4444; margin-left: 4px; }
+#mapModal { background-color: rgba(0, 0, 0, 0.5); z-index: 1000; }
+#map { height: 300px; width: 100%; }
